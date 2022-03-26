@@ -1,0 +1,43 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'idea'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
+}
+
+group = "github.bb441db.compose.strings"
+version = "1.0.0"
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api gradleApi()
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
+    implementation 'com.android.tools.build:gradle:7.1.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2'
+    implementation 'com.squareup:kotlinpoet:1.10.2'
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'github.bb441db.compose-strings'
+            implementationClass = 'github.bb441db.compose.strings.ComposeStringsPlugin'
+        }
+    }
+}

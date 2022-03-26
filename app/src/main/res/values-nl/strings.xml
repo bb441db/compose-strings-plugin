@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app.name">Compose Strings Plugin</string>
+    <string name="main.hello">Hallo %1$s!</string>
+    <string name="main.world">Wereld</string>
+</resources>
